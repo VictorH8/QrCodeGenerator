@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" placeholder="Insira o site ou texto aqui" name="qrcodetext" id="qrcodetext">
+        <button type="submit">GERAR</button>
+    </form>
+
+    {% if img_path %}
+        <div class="qrcodebox" name="qrcodebox" id="qrcodebox">
+            <img src="{{ url_for('static', filename='qrcodes/qrcode.png') }}" alt="QR Code">
+        </div>
+    {% endif %}
+</body>
+</html>
